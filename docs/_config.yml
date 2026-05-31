@@ -1,0 +1,5 @@
+theme: jekyll-theme-minimal
+title: FunASR Server
+description: FunASR 语音识别服务 - CPU 版本
+baseurl: /funasr-server
+url: https://YOUR_USERNAME.github.io

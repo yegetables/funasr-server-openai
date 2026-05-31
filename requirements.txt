@@ -1,0 +1,11 @@
+﻿# PyTorch CPU 版本（从阿里云镜像安装）
+torch==2.3.0+cpu
+torchaudio==2.3.0+cpu
+
+# FunASR
+funasr
+
+# Web 服务
+fastapi
+uvicorn
+python-multipart
