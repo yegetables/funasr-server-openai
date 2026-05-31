@@ -25,11 +25,8 @@ fi
 echo "📁 创建模型缓存目录..."
 mkdir -p models
 
-# 构建并启动服务
-echo "🔨 构建 Docker 镜像..."
-docker-compose build
-
-echo "🚀 启动服务..."
+# 启动服务（自动从 ghcr.io 拉取镜像）
+echo "🚀 启动服务（从 ghcr.io 拉取镜像）..."
 docker-compose up -d
 
 echo ""

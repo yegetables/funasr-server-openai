@@ -19,14 +19,14 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/YOUR_USERNAME/funasr-server.git
-cd funasr-server
+git clone https://github.com/yegetables/funasr-server-openai.git
+cd funasr-server-openai
 
 # 创建模型缓存目录
 mkdir -p models
 
-# 构建并启动
-docker-compose up -d --build
+# 启动服务（自动从 ghcr.io 拉取镜像）
+docker-compose up -d
 
 # 查看日志
 docker-compose logs -f
@@ -35,29 +35,15 @@ docker-compose logs -f
 ### 使用 Docker
 
 ```bash
-# 构建镜像
-docker build -t funasr-server .
-
-# 运行容器
-docker run -d \
-  --name funasr-server \
-  -p 28717:28717 \
-  -v $(pwd)/models:/root/.cache/modelscope \
-  funasr-server
-```
-
-### 使用 GHCR 镜像
-
-```bash
 # 拉取镜像
-docker pull ghcr.io/YOUR_USERNAME/funasr-server:main
+docker pull ghcr.io/yegetables/funasr-server-openai:main
 
 # 运行容器
 docker run -d \
   --name funasr-server \
   -p 28717:28717 \
   -v $(pwd)/models:/root/.cache/modelscope \
-  ghcr.io/YOUR_USERNAME/funasr-server:main
+  ghcr.io/yegetables/funasr-server-openai:main
 ```
 
 ## 📋 系统要求
@@ -157,6 +143,15 @@ A: 支持 WAV、MP3、FLAC、OGG 等常见格式（依赖 ffmpeg）。
   - 版权归属：ModelScope Team
 
 感谢 FunASR 团队提供的优秀开源项目，让我们能够轻松构建语音识别服务！
+
+## 🔗 相关链接
+
+- [FunASR 官方仓库](https://github.com/modelscope/FunASR)
+- [FunASR 文档](https://github.com/modelscope/FunASR/blob/main/README.md)
+- [ModelScope](https://www.modelscope.cn/)
+- [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
+- [本项目 GitHub 仓库](https://github.com/yegetables/funasr-server-openai)
+- [本项目 GHCR 镜像](https://ghcr.io/yegetables/funasr-server-openai)
 
 ## 📄 许可证
 
