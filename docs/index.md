@@ -51,6 +51,20 @@ docker run -d \
   funasr-server
 ```
 
+### 使用 GHCR 镜像
+
+```bash
+# 拉取镜像
+docker pull ghcr.io/YOUR_USERNAME/funasr-server:main
+
+# 运行容器
+docker run -d \
+  --name funasr-server \
+  -p 28717:28717 \
+  -v $(pwd)/models:/root/.cache/modelscope \
+  ghcr.io/YOUR_USERNAME/funasr-server:main
+```
+
 ## 📋 系统要求
 
 - **CPU**: 支持 x86_64 架构
@@ -148,3 +162,4 @@ A: 支持 WAV、MP3、FLAC、OGG 等常见格式（依赖 ffmpeg）。
 - [FunASR 官方仓库](https://github.com/modelscope/FunASR)
 - [FunASR 文档](https://github.com/modelscope/FunASR/blob/main/README.md)
 - [ModelScope](https://www.modelscope.cn/)
+- [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)

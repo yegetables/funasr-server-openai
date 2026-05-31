@@ -11,6 +11,7 @@
   - PyTorch CPU：阿里云 `mirrors.aliyun.com`
   - 其他 PyPI 包：阿里云 `mirrors.aliyun.com`
 - **完整音频支持**：包含 `ffmpeg`、`libsndfile1`、`libsox-dev` 等音频处理依赖
+- **自动构建**：GitHub Actions 自动构建并推送到 GitHub Container Registry (ghcr.io)
 
 ## 🚀 快速开始
 
@@ -43,6 +44,20 @@ docker run -d \
   -p 28717:28717 \
   -v $(pwd)/models:/root/.cache/modelscope \
   funasr-server
+```
+
+### 使用 GHCR 镜像
+
+```bash
+# 拉取镜像
+docker pull ghcr.io/YOUR_USERNAME/funasr-server:main
+
+# 运行容器
+docker run -d \
+  --name funasr-server \
+  -p 28717:28717 \
+  -v $(pwd)/models:/root/.cache/modelscope \
+  ghcr.io/YOUR_USERNAME/funasr-server:main
 ```
 
 ## 📋 系统要求
@@ -142,9 +157,4 @@ A: 支持 WAV、MP3、FLAC、OGG 等常见格式（依赖 ffmpeg）。
 - [FunASR 官方仓库](https://github.com/modelscope/FunASR)
 - [FunASR 文档](https://github.com/modelscope/FunASR/blob/main/README.md)
 - [ModelScope](https://www.modelscope.cn/)
-
-## 🙏 致谢
-
-- [FunASR](https://github.com/modelscope/FunASR) - 语音识别框架
-- [ModelScope](https://www.modelscope.cn/) - 模型仓库
-- [阿里云镜像](https://mirrors.aliyun.com/) - 国内镜像加速
+- [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
