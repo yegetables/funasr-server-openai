@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # image: ghcr.io/yegetables/funasr-server-openai:main
     container_name: funasr-server
     ports:
       - "28717:28717"

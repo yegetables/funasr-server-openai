@@ -22,8 +22,8 @@ RUN pip install --no-cache-dir --upgrade pip
 
 # 安装纯 CPU 版 PyTorch（从阿里云 PyTorch CPU 镜像源）
 RUN pip install --no-cache-dir \
-    torch==2.3.0+cpu \
-    torchaudio==2.3.0+cpu \
+    torch==2.4.0+cpu \
+    torchaudio==2.4.0+cpu \
     -f https://mirrors.aliyun.com/pytorch-wheels/cpu/
 
 # 安装 FunASR 及相关依赖（走阿里云镜像源）

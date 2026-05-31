@@ -1,6 +1,6 @@
 ﻿# PyTorch CPU 版本（从阿里云镜像安装）
-torch==2.3.0+cpu
-torchaudio==2.3.0+cpu
+torch==2.4.0+cpu
+torchaudio==2.4.0+cpu
 
 # FunASR
 funasr
