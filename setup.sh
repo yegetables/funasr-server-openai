@@ -25,9 +25,16 @@ fi
 echo "📁 创建模型缓存目录..."
 mkdir -p models
 
-# 启动服务（自动从 ghcr.io 拉取镜像）
-echo "🚀 启动服务（从 ghcr.io 拉取镜像）..."
-docker-compose up -d
+# 检查是否使用本地构建
+if [ "$1" = "--build" ]; then
+    echo "🔨 本地构建 Docker 镜像..."
+    docker-compose build
+    echo "🚀 启动服务..."
+    docker-compose up -d
+else
+    echo "🚀 启动服务（从 ghcr.io 拉取镜像）..."
+    docker-compose up -d
+fi
 
 echo ""
 echo "✅ 部署完成!"

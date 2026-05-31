@@ -15,7 +15,7 @@
 
 ## 🚀 快速开始
 
-### 使用 Docker Compose（推荐）
+### 方式一：使用 GHCR 镜像（推荐）
 
 ```bash
 # 克隆项目
@@ -32,7 +32,31 @@ docker-compose up -d
 docker-compose logs -f
 ```
 
-### 使用 Docker
+### 方式二：本地构建（用于开发调试）
+
+```bash
+# 克隆项目
+git clone https://github.com/yegetables/funasr-server-openai.git
+cd funasr-server-openai
+
+# 创建模型缓存目录
+mkdir -p models
+
+# 编辑 docker-compose.yml，启用本地构建
+# 注释掉 image 行，取消注释 build 部分
+# image: ghcr.io/yegetables/funasr-server-openai:main
+build:
+  context: .
+  dockerfile: Dockerfile
+
+# 构建并启动
+docker-compose up -d --build
+
+# 查看日志
+docker-compose logs -f
+```
+
+### 方式三：使用 Docker
 
 ```bash
 # 拉取镜像

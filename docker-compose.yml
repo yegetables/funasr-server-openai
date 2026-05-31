@@ -2,7 +2,14 @@ version: '3.8'
 
 services:
   funasr:
+    # 方式一：使用 GHCR 镜像（推荐，用于快速部署）
     image: ghcr.io/yegetables/funasr-server-openai:main
+
+    # 方式二：本地构建（用于开发调试）
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+
     container_name: funasr-server
     ports:
       - "28717:28717"
